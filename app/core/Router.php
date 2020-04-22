@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+use app\core\View;
+
 class Router
 {
 
@@ -29,6 +31,11 @@ class Router
             $this->routes['action'] = $routes[1];
         }
 
+        if($url == 'main' || $url == 'main/index'){
+            header('Location: /');
+            exit();
+        }
+
         if($url == "about"){
             $this->routes = [
               'controller' => 'Main',
@@ -54,19 +61,11 @@ class Router
                 // Вызываем метод контроллера
                 $controller->$action();
             }else{
-                Router::ErrorPage404();
+                View::errorCode(404);
             }
         }else{
-            Router::ErrorPage404();
-    }
-    }
-
-    static function ErrorPage404(){
-        //$host = 'http://'.$_SERVER['HTTP_HOST'].'/';
-        //header('HTTP/1.1 404 Not Found');
-        //header("Status: 404 Not Found");
-        //header('Location:'.$host.'404');
-        echo "Страница не найдена";
+            View::errorCode(404);
+        }
     }
 
 }
