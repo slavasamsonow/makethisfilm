@@ -36,6 +36,13 @@ class Router
             ];
         }
 
+        if($url == "login"){
+            $this->routes = [
+                'controller' => 'Main',
+                'action' => 'login'
+            ];
+        }
+
         // Добавление префиксов
 //        $model_name = $controller_name;
         $controller_path = 'app\controllers\\'.ucfirst($this->routes['controller'])."Controller";

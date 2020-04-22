@@ -12,4 +12,8 @@ class MainController extends Controller{
     public function aboutAction(){
         $this->view->render();
     }
+
+    public function loginAction(){
+        $this->view->render();
+    }
 }

@@ -14,7 +14,7 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
         <?php if ($this->path == 'Main/index'): ?>
             <span class="navbar-brand">MTF</span>
         <? else: ?>
@@ -31,14 +31,27 @@
                     <a class="nav-link" href="/about">О нас</a>
                 </li>
             </ul>
-            <span class="navbar-text">
-Сайт в помощь киноделам
+            <a class="btn btn-primary" href="/login" role="button">Вход</a>
+            <span class="navbar-text pl-3">
+                Сайт в помощь киноделам
             </span>
         </div>
     </nav>
 </header>
 
-<?= $content ?>
+<main>
+    <div class="container-fluid py-3">
+        <?= $content ?>
+    </div>
+</main>
+
+<footer class="footer py-3">
+    <div class="container">
+        <p>
+            Make this film! © 2020
+        </p>
+    </div>
+</footer>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
