@@ -18,9 +18,12 @@ function debug($str){
 //    exit();
 }
 
+
+
+setcookie('a', 'asd', 10000);
+
 // Открываем сессию
 session_start();
-
 
 $router = new Router;
 $router->run();

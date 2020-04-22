@@ -7,7 +7,6 @@ class Controller{
     public $view;
     public $model;
 
-
     function __construct($route)
     {
         $this->route = $route;
